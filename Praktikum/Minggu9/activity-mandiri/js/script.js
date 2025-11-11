@@ -1,21 +1,28 @@
-function validateForm() {
-        var nama = document.forms["myForm"]["nama"].value;
-        var email = document.forms["myForm"]["email"].value;
-        var pesan = document.forms["myForm"]["pesan"].value;
+function fn_ValForm() {
+        var sMsg = "";
 
+        var sEmail = document.getElementById("email").value;
 
-        var regexEmail = /^[a-z0-9][a-z0-9_\.-]{0,}[a-z0-9]@[a-z0-9][a-z0-9_\.-]{0,}[a-z0-9][\.][a-z0-9]{2,4}$/;
+        var pattern = /^[a-z0-9][a-z0-9_\.-]{0,}[a-z0-9]@[a-z0-9][a-z0-9_\.-]{0,}[a-z0-9][\.][a-z0-9]{2,4}$/;
 
-        if (nama == "" || email == "" || pesan == "") {
-                alert("Semua field harus diisi!");
-                return false;
+        if (document.getElementById("name").value == "") {
+                sMsg += "\n* Anda belum mengisikan nama";
         }
 
-        if (!regexEmail.test(email)) {
-                alert("Format email tidak valid!");
-                return false;
+        if (sEmail == "") {
+                sMsg += "\n* Anda belum mengisikan email";
+        } else if (!pattern.test(sEmail)) {
+                sMsg += "\n* Format email yang Anda masukkan tidak valid";
         }
 
-        alert("Form berhasil dikirim!");
-        return true;
+        if (document.getElementById("message").value == "") {
+                sMsg += "\n* Anda belum mengisikan pesan";
+        }
+
+        if (sMsg != "") {
+                alert("Peringatan:\n" + sMsg);
+                return false;
+        } else {
+                return true;
+        }
 }
