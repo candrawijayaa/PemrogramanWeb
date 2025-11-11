@@ -1,18 +1,19 @@
-var umur = prompt("Masukkan umur Anda:");
-var jk = prompt("Masukkan jenis kelamin Anda (M/F):");
+var iAge;
+var sMF;
 
-if (jk == "M" || jk == "m") {
-  if (umur < 20)
-    document.write("Kamu adalah laki-laki muda");
-  else
-    document.write("Kamu adalah laki-laki dewasa");
-} 
-else if (jk == "F" || jk == "f") {
-  if (umur < 20)
-    document.write("Kamu adalah perempuan muda");
-  else
-    document.write("Kamu adalah perempuan dewasa");
-} 
-else {
-  document.write("Jenis kelamin tidak dikenali");
+iAge = prompt("Please enter your age in years.", 0);
+sMF = prompt("Are you a (M)ale or (F)emale?", "M");
+
+if (iAge > 20) {
+  if (sMF == "M") {
+    alert("You are a male over 20 years of age");
+  } else {
+    alert("You are a female over 20 years of age");
+  }
+} else {
+  if (sMF == "M") {
+    alert("You are a male under the age of 21");
+  } else {
+    alert("You are a female under the age of 21");
+  }
 }
