@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Activity Mandiri - Form Validation Eksternal</title>
+  <script type="text/javascript" src="js/script.js"></script>
+</head>
+<body>
+  <h2>Form Validation (Eksternal Script)</h2>
+  <form name="myForm" onsubmit="return validateForm()" method="post">
+    <label>Nama:</label><br />
+    <input type="text" name="nama" /><br /><br />
+
+    <label>Email:</label><br />
+    <input type="text" name="email" /><br /><br />
+
+    <label>Pesan:</label><br />
+    <textarea name="pesan"></textarea><br /><br />
+
+    <input type="submit" value="Send" />
+  </form>
+</body>
+</html>
